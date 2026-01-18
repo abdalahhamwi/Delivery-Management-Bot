@@ -1,6 +1,7 @@
 import django
 import os
 import sys
+from asgiref.sync import sync_to_async
 
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -22,16 +23,17 @@ from orders.models import Order
 Bot_Token = "8559920620:AAFKAmyWtNkS_yY0cmet_CkfBTUjyKqFROc"
 Bot_UserName = "@Django-Management-Orders"
 
+@sync_to_async
 def get_order_by_id(order_id: int) -> str:
     try:
         order = Order.objects.get(id=order_id) 
         return (
-        f"order ID:(order.id)\n",
-        f"status: (order.get_status_display())\n", 
-        f"created : (order.created)\n",
-        f"adderss : (order.adderss)\n",
+        f"Order ID:(order.id)\n",
+        f"Status: (order.get_status_display())\n", 
+        f"Created : (order.created)\n",
+        f"Adderss : (order.adderss)\n",
         )
-    except Order.DoseNotExist:
+    except Order.DoesNotExist:
         return f"order with id (order.id) dose not exist" 
     
     
@@ -52,5 +54,6 @@ async def handle_order_query(update: Update, context: ContextTypes.DEFAULT_TYPE)
             
 if __name__ == "__main__":
    app = ApplicationBuilder().token(Bot_Token).build()
-   app.add_handler(CommandHandler("star", start_command))
+   app.add_handler(CommandHandler("start", start_command))
    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_order_query))
+   app.run_polling(poll_interval=3)
