@@ -1,30 +1,32 @@
-# Delivery Management Telegram Bot
+# 📦 Delivery Management Telegram Bot 
 
-A Telegram bot for managing orders with real-time status updates, built using Django and `python-telegram-bot`. This project enables users to check the status of their orders by sending their order ID to the bot.
+A **Django‑powered Telegram Bot** that allows users to check the status of their delivery orders by sending the order ID through Telegram.
 
----
-
-
-## Project Overview
-
-The **Delivery Management Telegram Bot** allows users to query the status of their orders by simply sending their order ID to the bot. The bot fetches the order status from a Django backend and responds with the order’s details including status, product name, and order creation date. 
-
-### Features:
-- **Order Lookup:** Users can query their orders by entering the order ID.
-- **Order Status:** The bot provides real-time updates on the status of the order (Pending, In Progress, Delivered).
-- **Django Backend:** The bot is connected to a Django project with an integrated database to store and manage order information.
-- **Telegram Integration:** The bot is built using the `python-telegram-bot` library, making it easy to integrate with Telegram.
+This project demonstrates backend integration between **Django**, **Telegram Bot API**, and async/sync bridging.
 
 ---
 
-## Technologies Used
+## 🚀 Features
 
-- **Python 3.x**
-- **Django** (for backend)
-- **python-telegram-bot** (for Telegram bot integration)
-- **PostgreSQL** (for database)
-- **asgiref.sync** (to handle synchronous Django ORM calls in an asynchronous bot context)
+**Check order status** by sending an order ID  
+**Telegram Bot integration** using `python-telegram-bot`  
+**Async + Sync bridging** using `sync_to_async`  
+**Django ORM** for database queries  
+Clean and modular architecture  
+Easy to extend for real delivery systems  
 
+---
 
+## 🛠️ Tech Stack
 
+| Technology              | Purpose                     |
+|------------------------|-----------------------------|
+| **Python 3.12**        | Main language               |
+| **Django**             | Backend framework & ORM     |
+| **Telegram Bot API**   | User interaction            |
+| **python-telegram-bot**| Bot framework               |
+| **SQLite/PostgreSQL**  | Database                    |
+| **asyncio + asgiref**  | Async execution             |
+
+---
 
