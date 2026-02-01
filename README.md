@@ -4,7 +4,7 @@ A **Django‑powered Telegram Bot** that allows users to check the status of the
 
 This project demonstrates backend integration between **Django**, **Telegram Bot API**, and async/sync bridging.
 
----
+
 
 ## 🚀 Features
 
@@ -54,7 +54,9 @@ python manage.py runserver
 
 5 . Add Sample Orders to the Database
 After running the server, open the admin panel:
+```bash
 http://127.0.0.1:8000/admin/
+```
 Log in using the superuser you created.
 
 Then add some Orders manually, for example:
